@@ -45,3 +45,18 @@ print(friendship[0])
 print(friendship[1])
 print(friendship[2])
 
+from collections import Counter
+
+def friends_of_friends(user):
+    user_id = user["id"]
+    return Counter(
+            foaf_id
+            for friend_id in friendships[user_id]
+            for foaf_id in friendships[friend_id]
+            if foaf_id != user_id
+            and foaf_id not in friendships[user_id]
+    )
+
+print(friends_of_friends(users[3]))
+
+interest = [ (0, "Hadoop"), (0, "Big Data"), (0, "HBase"), (0, "Java"), (0, "Spark"), (0, "Storm"), (0, "Cassandra"), (1,
