@@ -34,3 +34,14 @@ avg_connections = total_conections / num_users
 num_friends_by_id - [(user["id"], number_of_friends(user)) for user in users]
 
 num_friends_by_id.sort(key=lambda id_and_friends: id_and_friends[1], reverse=true)
+
+def foaf_ids_bad(user):
+    """foaf significa "friend of a friend" [amigo de um amigo]"""
+    return [foaf_id
+            for friend_id in friendships[user["id"]]
+            for foaf_id in friendships[friend_id]]
+
+print(friendship[0])
+print(friendship[1])
+print(friendship[2])
+
